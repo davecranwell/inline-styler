@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+	<form class="convertform" action="/styler/convert/" method="post">
+		<ul>
+			<li>
+				<label for="source_url">Choose your source from a URL</label>
+				<input type="text" name="source_url" id="source_url" value="{% if sourceURL %}{{sourceURL}}{% endif %}" alt="e.g. http://mydomain.com/myemail.html"/>
+			</li>
+			<li><strong>Or</strong></li>
+			<li>
+				<label for="source">Enter your source HTML <a href="#" class="loadexample">(Load an example)</a></label>
+				<textarea name="source" id="source" rows="20" cols="50">{% if sourceHTML %}{{sourceHTML}}{% endif %}</textarea>
+				<textarea class="example">{{example}}</textarea>
+			</li>
+			<li>
+				<input type="submit" value="Convert{% if convertedHTML %} again{% endif %}" class="submit" />
+			</li>
+			{% if convertedHTML %}
+				<li class="results">
+					<label for="results">Converted HTML</label>
+					<textarea id="results" name="results" rows="20" cols="50">{{convertedHTML}}</textarea>
+				</li>
+			{% endif %}
+		</ul>
+	</form>
+	
+	<div class="alerts">
+		
+		{% if supportPercentage %}
+		<div class="alertblock supportpercentage">
+			<h2>Overall Client Support</h2>
+			<p>{{supportPercentage|floatformat:"0"}}%</p>
+		</div>
+		{% endif %}
+	
+		{% if warnings or support %}
+			<div class="alertblock">
+				<h2>Warnings</h2>
+				<ul>
+				{% for warning in warnings %}
+					<li>{{warning}}</li>
+				{%endfor%}
+				{% for property,clients in support.iteritems %}
+					<li><strong>{{property}}</strong> not supported by:  {{clients|join:", "}}</li>
+				{%endfor%}
+				</ul>
+			</div>
+		{% endif %}
+		
+
+	</div>
+	
+	
+{% endblock %}

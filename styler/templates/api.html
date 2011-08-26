@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}API{% endblock %}
+{% block content %}
+	<h2>Using Inline Styler from your own applications</h2>
+	<p>A rudimentary API is available for Inline Styler, so you can convert HTML in your own apps.</p>
+	<p>By POSTing requests to <a href="http://inlinestyler.torchboxapps.com/styler/convert/">http://inlinestyler.torchboxapps.com/styler/convert/</a> you can receive a plain-text response containing your converted HTML.</p>
+	<p>POST variables are:</p>
+	<ul class="list">
+		<li><em>returnraw</em> (required): Any value. This is vital as it ensures the returned reponse contains just your converted HTML, not the full page from the web-interface version.</li>
+		<li><em>source</em> (optional): HTML text.  Your raw HTML to be converted</li>
+		<li><em>source_url</em> (optional): Valid URL. To be used instead of <em>source</em>. Pass a valid URL at which your source can be found</li>
+	</ul>
+	<br />
+	<p>And remember: a server is for life, not just for christmas - please be kind to it and use this API respectfully</p>
+	
+{% endblock %}
