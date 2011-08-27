@@ -21,3 +21,6 @@ Other requirements:
 
 Support:
 Inline Styler was written several years ago partly as a personal "Hello World" experiment to learn Django/Python. I welcome anyone willing to fork and contribute to the code, but unfortunately I don't have a great deal of time to maintain this myself - for example updating the css compliance CSV. I'm instead releasing it to the public after many requests for the source.
+
+Questions/Discussion:
+* Find me on twitter at @davecranwell
