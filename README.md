@@ -1,4 +1,4 @@
-# Inline Styler makes your CSS compatible with email clients.
+# Inline Styler makes CSS compatible with email clients.
 
 Try it here: http://inlinestyler.torchbox.com
 
