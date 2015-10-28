@@ -1,4 +1,4 @@
-# Inline Styler is the small Django app behind http://inlinestyler.torchboxapps.com
+# Inline Styler is the small Django app behind http://inlinestyler.torchbox.com
 
 It's a service which, when given a block of HTML including CSS, will parse the CSS and convert it to inline `style=""` attributes on each elements matched by the CSS rules found.
 
@@ -6,9 +6,9 @@ The benefit of this is primarily in developing HTML emails. The most common emai
 
 Additionally, among the email clients who do support CSS, support for individual CSS properties is variable. The Inline Styler will analyse your CSS and estimate a compatibility rating across all the email clients as a whole, alerting you to any particular properties likely to reduce compatibility.
 
-You can see a working example of this service at http://inlinestyler.torchboxapps.com.
+## Usage
 
-To use this app, CSS to be "inlined" must be presented in the HTML either
+To use this app, CSS you wish to be "inlined" must be declared in the HTML either:
 
  - linked absolutely e.g `<link rel="stylesheet" href="http://mysite.com/styles.css" />` or
  - provided in a `<style>` block in the `<head>` of the HTML, without `@imports`
