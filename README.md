@@ -1,7 +1,5 @@
 # Inline Styler makes CSS compatible with email clients.
 
-Try it here: http://inlinestyler.torchbox.com
-
 It's a service which, when given a block of HTML including CSS, will parse the CSS and convert it to inline `style=""` attributes on each elements matched by the CSS rules found.
 
 The benefit of this is primarily in developing HTML emails. The most common email clients have patchy support for `<style>` or `<link>` elements, but do on the whole support a varied set of CSS properties. Its therefore necessary to instead define styles in "style" attributes on each of the elements themselves, which is tedious for anything but the simplest of emails and introduces significant code maintenance problems. The Inline Styler frees up the developer to write CSS in less tedious/more maintainable ways: using proper selectors and rules, grouped in either a stylesheet or a `<style>` block. The Inline Styler converts these rules into the inline "style" attributes for you.
